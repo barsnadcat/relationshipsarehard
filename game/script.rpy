@@ -15,6 +15,14 @@ define audio.message = audio.mixkit_page_forward_single_chime_1107
 image bg black = "#000"
 image bg room = "room_evening_light_on.jpg"
 
+image she = im.FactorScale("idle.png", 0.7)
+image she sad = im.FactorScale("sad.png", 0.7)
+image she sceptical = im.FactorScale("idle.png", 0.7)
+image she smiling = im.FactorScale("idle.png", 0.7)
+image she surprised = im.FactorScale("idle.png", 0.7)
+image she dissapointed = im.FactorScale("sad.png", 0.7)
+image she crying = im.FactorScale("sad.png", 0.7)
+
 default itsOkToEscape = False
 label start:
 
