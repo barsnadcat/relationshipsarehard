@@ -12,10 +12,13 @@ define audio.bottle = audio.pixabay_bottle_open_14895
 define audio.pour = audio.pixabay_pouring_coffee_6743
 define audio.message = audio.mixkit_page_forward_single_chime_1107
 
+image bg black = "#000"
+image bg room = "room_evening_light_on.jpg"
+
 default itsOkToEscape = False
 label start:
 
-    scene
+    scene bg black
     with fade
     play music romantic
     "Замок впізнав ключ-карту і радісно пропищав. Двері в номер відкрилися"
@@ -109,7 +112,7 @@ label start:
     she "То я навпаки бережу свій час."
 
     "Вона ініціює секс"
-    scene
+    scene bg black
     with fade
     scene bg room
     with fade
@@ -205,14 +208,14 @@ label start:
     return
 
 label fail:
-    scene
+    scene bg black
     with fade
     "З тобою вона більше не зв'язувалася." 
     "Через декілька років вона таки вчинила самогубство."
     return
 
 label free:
-    scene
+    scene bg black
     with fade
     "Ти одразу викликав поліцю і швидку."
     "Вона померла."
@@ -220,7 +223,7 @@ label free:
     return
 
 label sleep:
-    scene
+    scene bg black
     with fade
     "Вона й далі продовжувала користуватися твоїми послугами."
     "Ви білше не поверталися до цієї теми."
