@@ -17,17 +17,17 @@ image bg room = "room_evening_light_on.jpg"
 
 
 
-image she dress sad = im.FactorScale("lady/sad.png", 1.5)
-image she dress sceptical = im.FactorScale("lady/sceptical.png", 1.5)
-image she dress smiling = im.FactorScale("lady/smiling.png", 1.5)
+image she dress sad = "lady/sad.png"
+image she dress sceptical = "lady/sceptical.png"
+image she dress smiling = "lady/smiling.png"
 image she dress neutral = im.FactorScale("idle.png", 0.7)
 
-image she robe crying = im.FactorScale("lady/sad 2.png", 1.5)
-image she robe dissapointed = im.FactorScale("lady/sceptical 2.png", 1.5)
-image she robe sad = im.FactorScale("lady/sad 2.png", 1.5)
-image she robe smiling = im.FactorScale("lady/smiling 2.png", 1.5)
-image she robe surprised = im.FactorScale("lady/sceptical 2.png", 1.5)
-image she robe neutral = im.FactorScale("lady/smiling 2.png", 1.5)
+image she robe crying = "lady/sad 2.png"
+image she robe dissapointed = "lady/sceptical 2.png"
+image she robe sad = "lady/sad 2.png"
+image she robe smiling = "lady/smiling 2.png"
+image she robe surprised = "lady/sceptical 2.png"
+image she robe neutral = "lady/smiling 2.png"
 
 default itsOkToEscape = False
 label start:
