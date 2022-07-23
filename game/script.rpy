@@ -15,13 +15,19 @@ define audio.message = audio.mixkit_page_forward_single_chime_1107
 image bg black = "#000"
 image bg room = "room_evening_light_on.jpg"
 
-image she = im.FactorScale("idle.png", 0.7)
-image she sad = im.FactorScale("sad.png", 0.7)
-image she sceptical = im.FactorScale("idle.png", 0.7)
-image she smiling = im.FactorScale("idle.png", 0.7)
-image she surprised = im.FactorScale("idle.png", 0.7)
-image she dissapointed = im.FactorScale("sad.png", 0.7)
-image she crying = im.FactorScale("sad.png", 0.7)
+
+
+image she dress sad = im.FactorScale("lady/sad.png", 1.5)
+image she dress sceptical = im.FactorScale("lady/sceptical.png", 1.5)
+image she dress smiling = im.FactorScale("lady/smiling.png", 1.5)
+image she dress neutral = im.FactorScale("idle.png", 0.7)
+
+image she robe crying = im.FactorScale("lady/sad 2.png", 1.5)
+image she robe dissapointed = im.FactorScale("lady/sceptical 2.png", 1.5)
+image she robe sad = im.FactorScale("lady/sad 2.png", 1.5)
+image she robe smiling = im.FactorScale("lady/smiling 2.png", 1.5)
+image she robe surprised = im.FactorScale("lady/sceptical 2.png", 1.5)
+image she robe neutral = im.FactorScale("lady/smiling 2.png", 1.5)
 
 default itsOkToEscape = False
 label start:
@@ -48,13 +54,13 @@ label start:
     scene bg balcony
     with fade
     show me
-    "Зорі на небі, приглушені ліхтарями міста, ледь мерегтіли."
+    "Зорі на небі, приглушені ліхтарями міста, ледь мерехтіли."
     "Огорожа за низька для мого комфорту, особливо якщо врахувати що це дев'ятий поверх!"
     "Пропищав замок і відкрилися вхідні двері."
     play sound door
     scene bg room
     with fade
-    show she at left
+    show she dress neutral at left
     show me at right
 
     me "Добрий вечір!"
@@ -68,7 +74,7 @@ label start:
     she "О так, вона була на вечірці з новим бойфрендом, то твої послуги їй найближчим часом не знадобляться!"
     me "Та невже"
     she "Геймер, постійно у віар зависає."
-    me "Її завжди тянуло на пригоди."
+    me "Її завжди тягнуло на пригоди."
     she "Це точно. Вона розповіла що в них навіть було побачення в віарі!"
     menu:
         "Я вважаю що:"
@@ -77,21 +83,21 @@ label start:
             show me laughin
             me "Ха ха. Треба з цією темою познайомитися по ближче."
             me "Може мені не треба буди нікуди їздити?"
-            show she sceptical
-            she "Мені ніяково стає поруч з людьми що сидяь у віарі. Що вони роблять і що від них чекати не зрозуміло, начебто вони якісь навіжені."
+            show she dress sceptical
+            she "Мені ніяково стає поруч з людьми що сидять у віарі. Що вони роблять і що від них чекати не зрозуміло, начебто вони якісь навіжені."
             me "Якщо вони нікому не заважають, нехай собі що хочуть то і роблять"
-            show she sad
+            show she dress sad
             she "Напевно ти правий..."
-        "Йому потрібна допомога. Він хворий, навіть якщо сам цьго не усвідомлює":
+        "Йому потрібна допомога. Він хворий, навіть якщо сам цього не усвідомлює":
             $ itsOkToEscape = False
             show me sceptical
             me "Світлана як завжди. Знайшла чегову жертву яка потребує допомоги!" 
             me "Хоч би не довелося потім її саму рятувати."
-            show she sceptical
+            show she dress sceptical
             she "Ти перебільшуєш, то лише ігри."
             me "Бігти від реальності не має сенсу. Вона тебе наздожене. Навіть у віарі."
-            me "Люди які цьго не розуміють, вони як діти, і потребують допомоги."
-            show she sad
+            me "Люди які цього не розуміють, вони як діти, і потребують допомоги."
+            show she dress sad
             she "Напевно ти правий..."
     play music sad fadeout 2.0 fadein 2.0
     "Вона зітхає."
@@ -107,14 +113,14 @@ label start:
 
     Не встигла і блимнути - все стало обертатися лише навколо них.
         
-    Ти напевно не знаєшь, але в мене був чоловік ми разом створили цю команію. Але він загинув.
+    Ти напевно не знаєш, але в мене був чоловік ми разом створили цю компанію. Але він загинув.
     """
     me "Він був, напевно дуже гарною людиною"
-    show she smiling
+    show she dress smiling
     she "О так! Він був найкращім!"
-    she "Звідки ти знаєшь?"
+    she "Звідки ти знаєш?"
     me "Бо я тепер розумію чтому ти відмовляєшь усім чоловікам! Вони не дотягують до його рівня!"
-    show she sceptical
+    show she dress sceptical
     she "Не знаю. Я вже не дівчинка. Відносини то складно, на це потрібно багато часу... Я не бачу чоловіків на яких його варто витрачати."
     me "Ну на мене ти витрачаєшь не тільки час, та ще й гроші!"
     she "То я навпаки бережу свій час."
@@ -127,21 +133,21 @@ label start:
     show me at right
     play sound shower
     "Вона повертаэться з душу"
-    show she at left
+    show she robe neutral at left
     with moveinleft
 
     "Ви сидите в обіймах на дивані"
     me "Можна задати особисте питання?"
-    show she surprised
+    show she robe surprised
     she "Ти якийсь дивний. Ну питай"
     me "Нащо я тобі?"
     she "Ти часом не захворів? З такими питанями ти багато грошей не заробиш!"
     me """До біса гроші. На зовні ти завжди веслеа, впевнена і вправна. Все можеш. Алеж я знаю що ти насправді нещасна.
         І я лише тимчасова розвага. """
-    show she sad
+    show she robe sad
     she "До чого ти ведеш"
     me "Я не зможу замінити твого чоловіка"
-    me "Твоя справа буди зручним"
+    she "Твоя справа бути зручним"
     hide she
     "Вона вийшла на балкон"
     play sound sliding_door
@@ -152,7 +158,7 @@ label start:
     scene bg balcony
     with fade
     show me at right
-    show she at left
+    show she robe neutral at left
     "Телефон був старий, навіть без сенсорногу єкрану"
     me "Вибач"
     "Я віддав їй телефон."
@@ -160,7 +166,7 @@ label start:
     "Вона мовчки переглянула повідомлення на телефоні"
     me "Чому ти не придбаєшь новий?"
     "Вона поклала телефон на долонь і болісно посміхнулась."
-    show she sad
+    show she robe sad
     she """
     Цей телефон його подарунок.
 
@@ -170,13 +176,13 @@ label start:
 
     В його кімнаті...
     """
-    show she crying
+    show she robe crying
 
     she "Бо зазвичай він цим займався..."
 
     "Ти її обійняв"
 
-    show she sad
+    show she robe sad
     play music tragic fadeout 2.0 fadein 2.0
     "Правду ти казав... Я біжу від реальності..."
     "Вона підішла до краю балкона"
@@ -191,10 +197,10 @@ label start:
             if itsOkToEscape:
                 she "Будь ласка. Дозволь мені це зробити."
                 "Ти її відпускаєш."
-                show she smiling
+                show she robe smiling
                 jump free
             else:
-                show she dissapointed
+                show she robe dissapointed
                 stop music fadeout 2.0
                 she "Тиж казав що бігати від реальності не має сенсу!"
                 she "Хоча, що я кажу. Вибач, то був жарт. На сьгодні досить."
@@ -202,13 +208,13 @@ label start:
         "Не треба здаватися!":
             me "Так, що ти таке кажешь! Я не дозволю тобі це зробити!"
             if itsOkToEscape:
-                show she dissapointed
+                show she robe dissapointed
                 stop music fadeout 2.0
                 she "Тиж казав що кожна людина має право жити я хоче?"
                 she "Хоча, що я кажу. Вибач, то був жарт. На сьгодні досить."
                 jump fail
             else:
-                show she smiling
+                show she robe smiling
                 she "Дякую... Будьласка залишься зі мною до ранку"
                 me "Звичайно"
                 jump sleep
