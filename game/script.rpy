@@ -13,21 +13,21 @@ define audio.pour = audio.pixabay_pouring_coffee_6743
 define audio.message = audio.mixkit_page_forward_single_chime_1107
 
 image bg black = "#000"
-image bg room = "room_evening_light_on.jpg"
-
-
+image bg room = "rooms/bedroom 1.png"
+image bg room after = "rooms/bedroom 2.png"
+image bg balcony = "rooms/balcony.png"
 
 image she dress sad = "lady/sad.png"
 image she dress sceptical = "lady/sceptical.png"
 image she dress smiling = "lady/smiling.png"
-image she dress neutral = im.FactorScale("idle.png", 0.7)
+image she dress neutral = "lady/neutral.png"
 
-image she robe crying = "lady/sad 2.png"
-image she robe dissapointed = "lady/sceptical 2.png"
+image she robe crying = "lady/crying 2.png"
+image she robe dissapointed = "lady/dissapointed 2.png"
 image she robe sad = "lady/sad 2.png"
 image she robe smiling = "lady/smiling 2.png"
-image she robe surprised = "lady/sceptical 2.png"
-image she robe neutral = "lady/smiling 2.png"
+image she robe surprised = "lady/surprised 2.png"
+image she robe neutral = "lady/neutral 2.png"
 
 default itsOkToEscape = False
 label start:
@@ -128,7 +128,7 @@ label start:
     "Вона ініціює секс"
     scene bg black
     with fade
-    scene bg room
+    scene bg room after
     with fade
     show me at right
     play sound shower
