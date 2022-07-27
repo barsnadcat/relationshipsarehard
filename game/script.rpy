@@ -1,5 +1,5 @@
-﻿define she = Character("Вона")
-define me = Character("Я")
+﻿define she = Character("Вона", image="she")
+define me = Character("Я", image="me")
 
 define audio.romantic = audio.mixkit_a_love_affair_1050
 define audio.sad = audio.pixabay_lofi_study_112191
@@ -23,11 +23,14 @@ image she dress smiling = "lady/smiling.png"
 image she dress neutral = "lady/neutral.png"
 
 image she robe crying = "lady/crying 2.png"
-image she robe dissapointed = "lady/dissapointed 2.png"
+image she robe disappointed = "lady/disappointed 2"
 image she robe sad = "lady/sad 2.png"
 image she robe smiling = "lady/smiling 2.png"
 image she robe surprised = "lady/surprised 2.png"
 image she robe neutral = "lady/neutral 2.png"
+image side me neutral = "tmp.png"
+image side me smiling = "tmp.png"
+image side me serious = "tmp.png"
 
 default itsOkToEscape = False
 label start:
@@ -40,35 +43,35 @@ label start:
     "Номер був в суцільній темряві. Я намацав вимикач."
     scene bg room
     with fade
-    show me
+
     "Швиденько оглянув номер - чи все прибрано і охайно, поки є ще час щоб покликати покоївку."
     "Люкс був в ідеальному стані"
-    "Час прийняти душ. Я добре знаю що вона це любить. Вона постійний клієнт."
+
+    me neutral "Час прийняти душ. Я добре знаю що вона це любить. Вона постійний клієнт."
     play sound shower
     scene bg room
     with fade
-    show me
 
     "Застібаючи свіжу сорочку я відсунув скляні двері на балкон."
     play sound sliding_door
     scene bg balcony
     with fade
-    show me
     "Зорі на небі, приглушені ліхтарями міста, ледь мерехтіли."
-    "Огорожа за низька для мого комфорту, особливо якщо врахувати що це дев'ятий поверх!"
+    me neutral "Огорожа за низька для мого комфорту, особливо якщо врахувати що це дев'ятий поверх!"
     "Пропищав замок і відкрилися вхідні двері."
     play sound door
     scene bg room
     with fade
-    show she dress neutral at left
-    show me at right
 
-    me "Добрий вечір!"
+    show she dress neutral
+    with moveinleft
+
+    me neutral "Добрий вечір!"
     she "Добрий, добрий"
     "Вона причепила табличку не турбувати на ручку і закрила двері"
     "Вона одягнена в сукню, прикраси і з макіяжем - вона з вечірки"
     she "Як справи?"
-    me "Чудово. Як вечірка?"
+    me neutral "Чудово. Як вечірка?"
     she "Світлана передавала привіт."
     me "Давно з нею не зустрічався, сподіваюся в неї все добре?"
     she "О так, вона була на вечірці з новим бойфрендом, то твої послуги їй найближчим часом не знадобляться!"
@@ -80,31 +83,25 @@ label start:
         "Я вважаю що:"
         "Це їхні проблеми. Якщо вони нікому не заважають, нехай собі що хочуть то і роблять":
             $ itsOkToEscape = True
-            show me laughin
-            me "Ха ха. Треба з цією темою познайомитися по ближче."
+            me smiling "Ха ха. Треба з цією темою познайомитися по ближче."
             me "Може мені не треба буди нікуди їздити?"
-            show she dress sceptical
-            she "Мені ніяково стає поруч з людьми що сидять у віарі. Що вони роблять і що від них чекати не зрозуміло, начебто вони якісь навіжені."
-            me "Якщо вони нікому не заважають, нехай собі що хочуть то і роблять"
-            show she dress sad
-            she "Напевно ти правий..."
+            she dress sceptical "Мені ніяково стає поруч з людьми що сидять у віарі. Що вони роблять і що від них чекати не зрозуміло, начебто вони якісь навіжені."
+            me neutral "Якщо вони нікому не заважають, нехай собі що хочуть то і роблять"
+            she dress sad "Напевно ти правий..."
         "Йому потрібна допомога. Він хворий, навіть якщо сам цього не усвідомлює":
             $ itsOkToEscape = False
-            show me sceptical
-            me "Світлана як завжди. Знайшла чегову жертву яка потребує допомоги!" 
+            me neutral "Світлана як завжди. Знайшла чегову жертву яка потребує допомоги!" 
             me "Хоч би не довелося потім її саму рятувати."
-            show she dress sceptical
-            she "Ти перебільшуєш, то лише ігри."
-            me "Бігти від реальності не має сенсу. Вона тебе наздожене. Навіть у віарі."
+            she dress sceptical "Ти перебільшуєш, то лише ігри."
+            me  neutral "Бігти від реальності не має сенсу. Вона тебе наздожене. Навіть у віарі."
             me "Люди які цього не розуміють, вони як діти, і потребують допомоги."
-            show she dress sad
-            she "Напевно ти правий..."
+            she dress sad "Напевно ти правий..."
     play music sad fadeout 2.0 fadein 2.0
     "Вона зітхає."
     she "Є вино?"
     play sound [bottle, pour]
-    me "Що тебе гризе?"
-    she """
+    me neutral "Що тебе гризе?"
+    she dress neutral """
     Робота задовбала. Раніше... Раніше я любила свою роботу.
 
     В нас був малий коллектив. Ми працювали зарди ідеї, не зважаючи чи принесе ця ідея гроші чи ні.
@@ -116,12 +113,10 @@ label start:
     Ти напевно не знаєш, але в мене був чоловік ми разом створили цю компанію. Але він загинув.
     """
     me "Він був, напевно дуже гарною людиною"
-    show she dress smiling
-    she "О так! Він був найкращім!"
+    she dress smiling"О так! Він був найкращім!"
     she "Звідки ти знаєш?"
     me "Бо я тепер розумію чтому ти відмовляєшь усім чоловікам! Вони не дотягують до його рівня!"
-    show she dress sceptical
-    she "Не знаю. Я вже не дівчинка. Відносини то складно, на це потрібно багато часу... Я не бачу чоловіків на яких його варто витрачати."
+    she dress sceptical "Не знаю. Я вже не дівчинка. Відносини то складно, на це потрібно багато часу... Я не бачу чоловіків на яких його варто витрачати."
     me "Ну на мене ти витрачаєшь не тільки час, та ще й гроші!"
     she "То я навпаки бережу свій час."
 
@@ -130,25 +125,23 @@ label start:
     with fade
     scene bg room after
     with fade
-    show me at right
     play sound shower
     "Вона повертаэться з душу"
-    show she robe neutral at left
+    show she robe neutral
     with moveinleft
 
     "Ви сидите в обіймах на дивані"
     me "Можна задати особисте питання?"
-    show she robe surprised
-    she "Ти якийсь дивний. Ну питай"
+    she robe surprised "Ти якийсь дивний. Ну питай"
     me "Нащо я тобі?"
     she "Ти часом не захворів? З такими питанями ти багато грошей не заробиш!"
     me """До біса гроші. На зовні ти завжди веслеа, впевнена і вправна. Все можеш. Алеж я знаю що ти насправді нещасна.
         І я лише тимчасова розвага. """
-    show she robe sad
-    she "До чого ти ведеш"
+    she robe sad "До чого ти ведеш"
     me "Я не зможу замінити твого чоловіка"
     she "Твоя справа бути зручним"
     hide she
+    with moveoutright
     "Вона вийшла на балкон"
     play sound sliding_door
     "Раптово задзеленчав її телефон"
@@ -157,8 +150,7 @@ label start:
     play sound sliding_door
     scene bg balcony
     with fade
-    show me at right
-    show she robe neutral at left
+    show she robe neutral
     "Телефон був старий, навіть без сенсорногу єкрану"
     me "Вибач"
     "Я віддав їй телефон."
@@ -176,15 +168,13 @@ label start:
 
     В його кімнаті...
     """
-    show she robe crying
 
-    she "Бо зазвичай він цим займався..."
+    she robe crying "Бо зазвичай він цим займався..."
 
     "Ти її обійняв"
 
-    show she robe sad
     play music tragic fadeout 2.0 fadein 2.0
-    "Правду ти казав... Я біжу від реальності..."
+    she robe sad "Правду ти казав... Я біжу від реальності..."
     "Вона підішла до краю балкона"
     she "Можна покінчити з цим тут і зараз..."
     "Вона перехилилася через огорожу"
@@ -200,22 +190,19 @@ label start:
                 show she robe smiling
                 jump free
             else:
-                show she robe dissapointed
                 stop music fadeout 2.0
-                she "Тиж казав що бігати від реальності не має сенсу!"
+                she robe disappointed "Тиж казав що бігати від реальності не має сенсу!"
                 she "Хоча, що я кажу. Вибач, то був жарт. На сьгодні досить."
                 jump fail
         "Не треба здаватися!":
             me "Так, що ти таке кажешь! Я не дозволю тобі це зробити!"
             if itsOkToEscape:
-                show she robe dissapointed
                 stop music fadeout 2.0
-                she "Тиж казав що кожна людина має право жити я хоче?"
+                she robe disappointed "Тиж казав що кожна людина має право жити я хоче?"
                 she "Хоча, що я кажу. Вибач, то був жарт. На сьгодні досить."
                 jump fail
             else:
-                show she robe smiling
-                she "Дякую... Будьласка залишься зі мною до ранку"
+                she robe smiling "Дякую... Будьласка залишься зі мною до ранку"
                 me "Звичайно"
                 jump sleep
 
