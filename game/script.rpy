@@ -28,9 +28,11 @@ image she robe sad = "lady/sad 2.png"
 image she robe smiling = "lady/smiling 2.png"
 image she robe surprised = "lady/surprised 2.png"
 image she robe neutral = "lady/neutral 2.png"
-image side me neutral = "tmp.png"
-image side me smiling = "tmp.png"
-image side me serious = "tmp.png"
+
+image side me disturbed = "man/disturbed.png"
+image side me neutral = "man/neutral.png"
+image side me serious = "man/serious.png"
+image side me smiling = "man/smiling.png"
 
 default itsOkToEscapeFromReality = False
 default isHobby = False
@@ -276,9 +278,9 @@ label start:
             if itsOkToEscapeFromReality:
                 she "Пробач. Я тебе налякала?"
                 if isHobby:
-                    me "Дуже."
+                    me disturbed "Дуже."
                 else:
-                    me "Мертві клієнти то погано для бізнесу."
+                    me disturbed "Мертві клієнти то погано для бізнесу."
                 she robe smiling "Залишишся зі мною до ранку? Будь ласка?"
                 me "Щеб пак. Тебе зараз небезпечно залишати одну."
                 show she robe smiling
