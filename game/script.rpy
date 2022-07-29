@@ -1,5 +1,5 @@
-﻿define she = Character("Вона", image="she")
-define me = Character("Я", image="me")
+﻿define she = Character("Вона", image="she", who_color="#D15133")
+define me = Character("Я", image="me", who_color="#1891C2")
 
 define audio.romantic = audio.mixkit_a_love_affair_1050
 define audio.sad = audio.pixabay_lofi_study_112191
