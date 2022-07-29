@@ -30,6 +30,13 @@ define config.version = "1.0"
 ## потрійними лапками, а між абзацами залиште порожній рядок.
 
 define gui.about = _p("""
+Скрипт: Цахілов Дмитро
+
+Арт: Варламова Маріна
+
+Звук та музика: pixabay.com, mixkit.co
+
+2022 рік, для Ukrainian Visual Novel Jam at itch.io
 """)
 
 
@@ -48,7 +55,7 @@ define build.name = "RelationshipsAreHard"
 
 define config.has_sound = True
 define config.has_music = True
-define config.has_voice = True
+define config.has_voice = False
 
 
 ## Щоб дозволити користувачеві відтворювати тестовий звук на звуковому або
